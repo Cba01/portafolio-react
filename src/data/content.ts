@@ -86,8 +86,9 @@ export const projects: Project[] = [
     description:
       "Aplicación de gestión de tareas fullstack con arquitectura desacoplada: API REST construida con Django REST Framework, frontend en React con Tailwind CSS, autenticación mediante JWT y base de datos PostgreSQL. Desplegado en producción (Vercel + Render).",
     stack: ["Django", "React", "Tailwind CSS", "JWT", "PostgreSQL"],
-    image: "https://picsum.photos/seed/todo-list-fullstack/800/700",
+    image: "/projects/todoapp.jpg",
     repoUrl: "https://github.com/Cba01/todolist-fullstack",
+    demoUrl: "https://todolist-fullstack-mu.vercel.app/"
   },
   {
     slug: "taskflow",
@@ -95,7 +96,7 @@ export const projects: Project[] = [
     description:
       "Réplica funcional de un sistema de gestión de proyectos estilo Jira, desarrollada con Django REST Framework, React, Tailwind CSS y PostgreSQL. Incluye roles y permisos de usuario, asignación de tareas, comentarios/actividad, filtros avanzados y notificaciones. (En proceso de despliegue).",
     stack: ["Django", "React", "Tailwind CSS", "JWT", "PostgreSQL"],
-    image: "https://picsum.photos/seed/taskflow-jira/1200/900",
+    image: "/projects/taskflow.jpg",
     repoUrl: "https://github.com/Cba01/taskflow-django",
   },
   {
