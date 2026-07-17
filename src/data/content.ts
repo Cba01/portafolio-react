@@ -21,7 +21,7 @@ export const profile = {
     linkedin: "https://www.linkedin.com/in/sebastian-chuquimia-vergara-834aab151/",
     email: "mailto:seba.j.os@hotmail.com",
   },
-  resumeUrl: "/SebastianChuquimia-CV-DesarrallorSoftware.pdf",
+  resumeUrl: "/SebastianChuquimia-CV-DesarrolladorSoftware.pdf",
 };
 
 export type ExperienceItem = {
@@ -120,7 +120,7 @@ export type SkillGroup = {
 export const skillGroups: SkillGroup[] = [
   {
     category: "Backend",
-    skills: ["Django", "Django REST Framework", "Python"],
+    skills: ["Django", "Django REST Framework", "Python", "C#", ".NET"],
   },
   {
     category: "Frontend",
