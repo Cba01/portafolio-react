@@ -4,6 +4,11 @@ Código de mi portafolio. Lo armé para tener un lugar propio donde mostrar en q
 
 Vengo de 1.5 años haciendo Unity (VR/AR/MR), y ahora estoy en transición hacia desarrollo web full stack, así que el sitio mezcla ambas cosas: proyectos de realidad aumentada/mixta junto con apps fullstack hechas con Django + React.
 
+## Live demo
+
+<a href="https://sebastian-chuquimia.vercel.app/">Portafolio Sebastián Chuquimia</a>
+
+
 ## Stack
 
 - React 19 + TypeScript, con Vite
