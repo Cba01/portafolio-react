@@ -1,32 +1,44 @@
-# React + TypeScript + Vite
+# Portafolio personal
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Código de mi portafolio. Lo armé para tener un lugar propio donde mostrar en qué he trabajado, en vez de depender solo de LinkedIn o el CV en PDF.
 
-Currently, two official plugins are available:
+Vengo de 1.5 años haciendo Unity (VR/AR/MR), y ahora estoy en transición hacia desarrollo web full stack, así que el sitio mezcla ambas cosas: proyectos de realidad aumentada/mixta junto con apps fullstack hechas con Django + React.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
 
-## React Compiler
+- React 19 + TypeScript, con Vite
+- Tailwind CSS v4
+- Motion para las animaciones de scroll
+- Base UI / shadcn para los componentes de UI
+- EmailJS para que el formulario de contacto mande correo sin backend propio
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Correrlo en local
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+El formulario de contacto necesita credenciales de EmailJS para funcionar. Copia `.env.example` a `.env` y completa:
+
+```
+VITE_EMAILJS_SERVICE_ID=
+VITE_EMAILJS_TEMPLATE_ID=
+VITE_EMAILJS_PUBLIC_KEY=
+```
+
+Sin eso el sitio funciona igual, solo falla el envío del formulario.
+
+## Dónde está cada cosa
+
+- `src/components/` — una sección por archivo (Hero, About, Projects, Skills, Contact, etc.)
+- `src/data/content.ts` — todo el texto y la data: perfil, experiencia, proyectos, skills. Es lo primero que toco cuando actualizo algo.
+- `src/data/skillIcons.tsx` — qué ícono y color le corresponde a cada tecnología en la sección de Skills.
+- `src/components/ui/` — componentes base (botón, card, badge, etc.)
+
+## Scripts
+
+- `npm run dev` — servidor de desarrollo
+- `npm run build` — build de producción (corre `tsc -b` y luego `vite build`)
+- `npm run preview` — sirve el build para probarlo local
+- `npm run lint` — oxlint
