@@ -6,7 +6,7 @@ Vengo de 1.5 años haciendo Unity (VR/AR/MR), y ahora estoy en transición hacia
 
 ## Live demo
 
-<a href="https://sebastian-chuquimia.vercel.app/">Portafolio Sebastián Chuquimia</a>
+<a href="https://sebastianchuquimia.vercel.app/">Portafolio Sebastián Chuquimia</a>
 
 
 ## Stack
