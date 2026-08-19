@@ -17,6 +17,8 @@ dist-ssr
 !.vscode/extensions.json
 .idea
 .claude
+.cursor
+.impeccable
 .agents
 skills-lock.json
 .DS_Store

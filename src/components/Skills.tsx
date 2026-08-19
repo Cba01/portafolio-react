@@ -1,8 +1,29 @@
+import type { ReactNode } from "react";
 import { Reveal } from "@/components/Reveal";
 import { skillGroups } from "@/data/content";
-import { categoryIconMap, skillIconMap } from "@/data/skillIcons";
+import { categoryIconMap, skillIconMap, type IconComponent } from "@/data/skillIcons";
 import { cn } from "@/lib/utils";
+import { CardBrackets } from "@/components/CardBrackets";
 import { Code2 } from "lucide-react";
+
+const LEARNING_SUFFIX = " (aprendiendo)";
+
+function SkillCard({ category, icon: CategoryIcon, children }: { category: string; icon: IconComponent; children: ReactNode }) {
+  return (
+    <div className="group relative h-full overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10">
+      <CardBrackets />
+
+      <div className="relative z-10 flex items-center gap-3">
+        <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary/15">
+          <CategoryIcon className="size-5" />
+        </span>
+        <h3 className="text-base font-medium tracking-tight">{category}</h3>
+      </div>
+
+      <div className="relative z-10 mt-5 flex flex-wrap gap-2.5">{children}</div>
+    </div>
+  );
+}
 
 export function Skills() {
   return (
@@ -21,40 +42,40 @@ export function Skills() {
 
             return (
               <Reveal key={group.category} delay={i * 0.05} className="h-full">
-                <div className="group h-full rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10">
-                  <div className="flex items-center gap-3">
-                    <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary/15">
-                      <CategoryIcon className="size-5" />
-                    </span>
-                    <h3 className="text-base font-medium tracking-tight">{group.category}</h3>
-                  </div>
-
-                  <div className="mt-5 flex flex-wrap gap-2.5">
+                <SkillCard category={group.category} icon={CategoryIcon}>
                     {group.skills.map((skill) => {
                       const entry = skillIconMap[skill];
                       const SkillIcon = entry?.icon;
+                      const isLearning = skill.endsWith(LEARNING_SUFFIX);
+                      const label = isLearning ? skill.slice(0, -LEARNING_SUFFIX.length) : skill;
 
                       return (
                         <span
                           key={skill}
-                          className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-3 py-1.5 font-mono text-xs font-medium transition-colors hover:border-primary/60 hover:text-primary"
+                          className={cn(
+                            "inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 font-mono text-xs font-medium transition-colors hover:border-primary/60 hover:text-primary",
+                            isLearning
+                              ? "border-dashed border-border/70 bg-transparent text-muted-foreground"
+                              : "border-border bg-background",
+                          )}
                         >
                           {SkillIcon && (
                             <span
                               className={cn(
                                 "flex size-4 shrink-0 items-center justify-center",
                                 entry.needsDarkChip && "rounded-full bg-neutral-900 p-0.5",
+                                isLearning && "opacity-70",
                               )}
                             >
                               <SkillIcon className="size-full" color={entry.color} />
                             </span>
                           )}
-                          {skill}
+                          {label}
+                          {isLearning && <span className="text-[11px] text-muted-foreground/70">· aprendiendo</span>}
                         </span>
                       );
                     })}
-                  </div>
-                </div>
+                </SkillCard>
               </Reveal>
             );
           })}

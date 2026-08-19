@@ -7,6 +7,7 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { Grain } from "@/components/Grain";
 import { Ambient } from "@/components/Ambient";
+import { CustomCursor } from "@/components/CustomCursor";
 import { Toaster } from "@/components/ui/sonner";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <>
       <Ambient />
       <Grain />
+      <CustomCursor />
       <Nav />
       <main>
         <Hero />

@@ -1,5 +1,6 @@
 import { Reveal } from "@/components/Reveal";
 import { profile, experience } from "@/data/content";
+import { cn } from "@/lib/utils";
 
 export function About() {
   return (
@@ -10,9 +11,22 @@ export function About() {
 
       <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-[1.3fr_0.7fr]">
         <Reveal delay={0.05} className="space-y-5">
-          {profile.bio.map((paragraph) => (
-            <p key={paragraph.slice(0, 24)} className="max-w-[65ch] text-base leading-relaxed text-muted-foreground">
-              {paragraph}
+          {profile.bio.map((paragraph, index) => (
+            <p
+              key={paragraph[0].text.slice(0, 24)}
+              className={cn(
+                "max-w-[54ch] leading-relaxed",
+                index === 0 ? "text-lg text-foreground" : "text-base text-muted-foreground",
+              )}
+            >
+              {paragraph.map((part, partIndex) => (
+                <span
+                  key={partIndex}
+                  className={part.emphasis ? "font-mono font-medium text-foreground" : undefined}
+                >
+                  {part.text}
+                </span>
+              ))}
             </p>
           ))}
         </Reveal>

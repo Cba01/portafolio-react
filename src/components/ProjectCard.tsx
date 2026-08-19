@@ -2,6 +2,7 @@ import { ArrowSquareOutIcon, GithubLogoIcon, YoutubeLogoIcon } from "@phosphor-i
 import { Badge } from "@/components/ui/badge";
 import type { Project } from "@/data/content";
 import { cn } from "@/lib/utils";
+import { CardBrackets } from "@/components/CardBrackets";
 
 type ProjectCardProps = {
   project: Project;
@@ -17,14 +18,16 @@ export function ProjectCard({ project, className, wide, compact }: ProjectCardPr
   return (
     <article
       className={cn(
-        "group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10",
+        "group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10",
         compact && "flex-row items-center",
         className,
       )}
     >
+      <CardBrackets />
+
       <div
         className={cn(
-          "overflow-hidden",
+          "relative z-10 overflow-hidden",
           compact ? "aspect-square w-28 shrink-0 sm:w-36" : wide ? "aspect-video" : "aspect-[4/3]",
         )}
       >
@@ -36,11 +39,11 @@ export function ProjectCard({ project, className, wide, compact }: ProjectCardPr
         />
       </div>
 
-      <div className={cn("flex flex-1 flex-col gap-3", compact ? "gap-1.5 p-4" : "p-6")}>
+      <div className={cn("relative z-10 flex flex-1 flex-col gap-3", compact ? "gap-1.5 p-4" : "p-6")}>
         <h3 className={cn("font-medium tracking-tight", compact ? "text-sm" : "text-lg")}>
           {project.title}
         </h3>
-        {!compact && <p className="text-sm text-muted-foreground">{project.description}</p>}
+        {!compact && <p className="max-w-[52ch] text-sm text-muted-foreground">{project.description}</p>}
 
         <div className={cn("flex flex-wrap gap-2", compact ? "mt-0" : "mt-1")}>
           {project.stack.map((tech) => (

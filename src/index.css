@@ -5,6 +5,7 @@
 @import "@fontsource-variable/geist-mono";
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant coarse (@media (pointer: coarse));
 
 @theme inline {
     --font-heading: var(--font-sans);
@@ -48,6 +49,8 @@
     --radius-2xl: calc(var(--radius) * 1.8);
     --radius-3xl: calc(var(--radius) * 2.2);
     --radius-4xl: calc(var(--radius) * 2.6);
+    --color-accent-violet: var(--accent-violet);
+    --color-accent-cyan: var(--accent-cyan);
 }
 
 :root {
@@ -74,6 +77,9 @@
     --chart-3: oklch(0.439 0 0);
     --chart-4: oklch(0.371 0 0);
     --chart-5: oklch(0.269 0 0);
+    --accent-violet: oklch(0.55 0.24 302);
+    --accent-cyan: oklch(0.5 0.15 195);
+    --gradient-brand: linear-gradient(135deg, var(--primary), var(--accent-violet));
     --radius: 0.625rem;
     --sidebar: oklch(0.985 0 0);
     --sidebar-foreground: oklch(0.145 0 0);
@@ -109,6 +115,8 @@
     --chart-3: oklch(0.439 0 0);
     --chart-4: oklch(0.371 0 0);
     --chart-5: oklch(0.269 0 0);
+    --accent-violet: oklch(0.74 0.19 302);
+    --accent-cyan: oklch(0.8 0.13 195);
     --sidebar: oklch(0.205 0 0);
     --sidebar-foreground: oklch(0.985 0 0);
     --sidebar-primary: oklch(0.488 0.243 264.376);
@@ -138,5 +146,16 @@
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none;
+  }
+  html.has-custom-cursor input,
+  html.has-custom-cursor textarea {
+    cursor: text;
   }
 }

@@ -15,7 +15,7 @@ import {
 import { FaAws } from "react-icons/fa6";
 import { Server, Code2, Database, Glasses, Scan, Combine, Box } from "lucide-react";
 
-type IconComponent = ComponentType<{ className?: string; color?: string }>;
+export type IconComponent = ComponentType<{ className?: string; color?: string }>;
 
 export type SkillIcon = {
   icon: IconComponent;

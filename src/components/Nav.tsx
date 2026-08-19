@@ -68,7 +68,7 @@ export function Nav() {
                     <motion.span
                       layoutId="nav-active-glow"
                       transition={{ type: "spring", stiffness: 380, damping: 32 }}
-                      className="absolute inset-x-2 -top-2 h-px rounded-full bg-primary shadow-[0_0_10px_1px_var(--color-primary)]"
+                      className="absolute inset-x-2 -top-2 h-px rounded-full bg-[linear-gradient(90deg,var(--primary),var(--accent-violet))] shadow-[0_0_10px_1px_var(--color-primary)]"
                     />
                   )}
                   {link.label}

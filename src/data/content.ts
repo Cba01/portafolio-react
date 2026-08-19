@@ -3,13 +3,38 @@ export const profile = {
   role: "Ingeniero en Informática - Desarrollador Full Stack Web",
   location: "Antofagasta, Chile",
   email: "seba.j.os@hotmail.com",
-  headline: "Convierto ideas en productos que funcionan.",
-  subtext:
-    "Un año y medio de experiencia como desarrollador construyendo con Unity y C#. Ahora enfocado en desarrollo full stack web.",
+  headline: "Full stack web, con raíces en VR y AR.",
+  /** Se resalta en mono los términos de stack para que se escaneen primero. */
+  subtextParts: [
+    { text: "Construyo con " },
+    { text: "Django, React y TypeScript", emphasis: true },
+    { text: ". Antes, 1.5 años en Unity creando experiencias " },
+    { text: "VR y AR", emphasis: true },
+    { text: " — misma base técnica, aplicada a un nuevo stack." },
+  ],
+  /** Primer párrafo se destaca como lead; los términos de stack en el segundo se resaltan en mono, igual que en el subtext del Hero. */
   bio: [
-    "Soy Ingeniero en Informática con experiencia en desarrollo de software, actualmente enfocado en desarrollo web full stack. Cuento con 1.5 años de experiencia profesional en Unity (C#), desarrollando experiencias interactivas en realidad virtual, realidad aumentada, realidad mixta y proyectos 3D.",
-    "Actualmente estoy transicionando hacia el desarrollo web, con foco en Django y Django REST Framework para el backend, y React con TypeScript para el frontend, junto con PostgreSQL, Tailwind CSS y Docker. Durante mis estudios desplegué un proyecto en AWS EC2, y sigo profundizando mis conocimientos en despliegue en la nube.",
-    "Me apasiona la tecnología en general y disfruto aprender nuevas herramientas y adaptarme a distintos stacks. Busco oportunidades como desarrollador web full stack, aplicando mi base sólida en programación y mi experiencia previa en proyectos interactivos para aportar una perspectiva técnica versátil.",
+    [
+      {
+        text: "Soy Ingeniero en Informática con experiencia en desarrollo de software, actualmente enfocado en desarrollo web full stack. Cuento con 1.5 años de experiencia profesional en Unity (C#), desarrollando experiencias interactivas en realidad virtual, realidad aumentada, realidad mixta y proyectos 3D.",
+      },
+    ],
+    [
+      { text: "Actualmente estoy transicionando hacia el desarrollo web, con foco en " },
+      { text: "Django y Django REST Framework", emphasis: true },
+      { text: " para el backend, y " },
+      { text: "React con TypeScript", emphasis: true },
+      { text: " para el frontend, junto con " },
+      { text: "PostgreSQL, Tailwind CSS y Docker", emphasis: true },
+      { text: ". Durante mis estudios desplegué un proyecto en " },
+      { text: "AWS EC2", emphasis: true },
+      { text: ", y sigo profundizando mis conocimientos en despliegue en la nube." },
+    ],
+    [
+      {
+        text: "Me apasiona la tecnología en general y disfruto aprender nuevas herramientas y adaptarme a distintos stacks. Busco oportunidades como desarrollador web full stack, aplicando mi base sólida en programación y mi experiencia previa en proyectos interactivos para aportar una perspectiva técnica versátil.",
+      },
+    ],
   ],
   facts: [
     { label: "Formación", value: "Ing. en Informática" },
