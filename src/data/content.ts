@@ -1,7 +1,6 @@
 export const profile = {
   name: "Sebastián Chuquimia Vergara",
   role: "Ingeniero en Informática - Desarrollador Full Stack Web",
-  location: "Antofagasta, Chile",
   email: "seba.j.os@hotmail.com",
   headline: "Full stack web, con raíces en VR y AR.",
   /** Se resalta en mono los términos de stack para que se escaneen primero. */
@@ -119,7 +118,7 @@ export const projects: Project[] = [
     slug: "taskflow",
     title: "TaskFlow - Mini Jira Fullstack",
     description:
-      "Réplica funcional de un sistema de gestión de proyectos estilo Jira, desarrollada con Django REST Framework, React, Tailwind CSS y PostgreSQL. Incluye roles y permisos de usuario, asignación de tareas, comentarios/actividad, filtros avanzados y notificaciones. (En proceso de despliegue).",
+      "Réplica funcional de un sistema de gestión de proyectos estilo Jira, desarrollada con Django REST Framework, React, Tailwind CSS y PostgreSQL. Incluye roles y permisos de usuario, asignación de tareas, comentarios/actividad, filtros avanzados y notificaciones.",
     stack: ["Django", "React", "Tailwind CSS", "JWT", "PostgreSQL"],
     image: "/projects/taskflow.jpg",
     repoUrl: "https://github.com/Cba01/taskflow-django",

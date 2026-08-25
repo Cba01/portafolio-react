@@ -1,6 +1,6 @@
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
-import { ArrowRightIcon, FileArrowDownIcon, MapPinIcon } from "@phosphor-icons/react";
+import { ArrowRightIcon, FileArrowDownIcon } from "@phosphor-icons/react";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/Reveal";
 import { profile } from "@/data/content";
@@ -64,11 +64,6 @@ export function Hero() {
               {part.text}
             </span>
           ))}
-        </p>
-
-        <p className="mt-4 inline-flex items-center gap-1.5 text-sm text-muted-foreground">
-          <MapPinIcon className="size-4" />
-          {profile.location}
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
