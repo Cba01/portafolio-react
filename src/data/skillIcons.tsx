@@ -38,10 +38,10 @@ export const skillIconMap: Record<string, SkillIcon> = {
   Git: { icon: SiGit, color: "#F03C2E" },
   "AWS EC2 (aprendiendo)": { icon: FaAws, color: "#FF9900" },
   Unity: { icon: SiUnity, color: "#FFFFFF", needsDarkChip: true },
-  VR: { icon: Glasses, color: "#8B5CF6" },
-  AR: { icon: Scan, color: "#8B5CF6" },
-  MR: { icon: Combine, color: "#8B5CF6" },
-  "3D": { icon: Box, color: "#8B5CF6" },
+  VR: { icon: Glasses, color: "#3b82f6" },
+  AR: { icon: Scan, color: "#3b82f6" },
+  MR: { icon: Combine, color: "#3b82f6" },
+  "3D": { icon: Box, color: "#3b82f6" },
 };
 
 export const categoryIconMap: Record<string, IconComponent> = {

@@ -1,26 +1,39 @@
-import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { useReducedMotion } from "motion/react";
+import { useTheme } from "next-themes";
+import Auralis from "@/components/ui/auralis";
+
+// Monocromático: solo tonos de --primary (index.css), del más claro al más profundo
+const DARK_COLORS = ["#3b82f6", "#93c5fd", "#1e3a8a"];
+const LIGHT_COLORS = ["#93c5fd", "#1d4ed8", "#1e3a8a"];
 
 export function Ambient() {
   const reduce = useReducedMotion();
-  const { scrollY } = useScroll();
+  const { resolvedTheme } = useTheme();
+  const isDark = resolvedTheme === "dark";
 
-  const yBlue = useTransform(scrollY, [0, 2400], [0, 120]);
-  const yViolet = useTransform(scrollY, [0, 2400], [0, -160]);
-  const yCyan = useTransform(scrollY, [0, 2400], [0, 220]);
+  if (reduce) {
+    return (
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 -z-10 opacity-[0.14] dark:opacity-60"
+        style={{ backgroundImage: "var(--gradient-brand)" }}
+      />
+    );
+  }
 
   return (
-    <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-      <motion.div
-        className="absolute -top-48 -left-48 size-136 rounded-full bg-primary/15 blur-3xl"
-        style={{ y: reduce ? 0 : yBlue }}
-      />
-      <motion.div
-        className="absolute top-1/3 -right-40 size-120 rounded-full bg-accent-violet/10 blur-3xl"
-        style={{ y: reduce ? 0 : yViolet }}
-      />
-      <motion.div
-        className="absolute -bottom-48 left-1/4 size-112 rounded-full bg-accent-cyan/10 blur-3xl"
-        style={{ y: reduce ? 0 : yCyan }}
+    <div
+      aria-hidden="true"
+      className="pointer-events-none fixed inset-0 -z-10 opacity-[0.22] dark:opacity-90"
+    >
+      <Auralis
+        height="100%"
+        className="h-full w-full"
+        variant={isDark ? "dark" : "light"}
+        bg={isDark ? "#030303" : "#ffffff"}
+        colors={isDark ? DARK_COLORS : LIGHT_COLORS}
+        speed={0.35}
+        grain={isDark ? 0.25 : 0.12}
       />
     </div>
   );

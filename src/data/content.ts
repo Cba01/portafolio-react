@@ -122,6 +122,7 @@ export const projects: Project[] = [
     stack: ["Django", "React", "Tailwind CSS", "JWT", "PostgreSQL"],
     image: "/projects/taskflow.jpg",
     repoUrl: "https://github.com/Cba01/taskflow-django",
+    demoUrl: "https://taskp-flow.netlify.app/",
   },
   {
     slug: "zombies-survival",
