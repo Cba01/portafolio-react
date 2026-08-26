@@ -42,7 +42,7 @@ export const profile = {
   ],
   socials: {
     github: "https://github.com/Cba01",
-    linkedin: "https://www.linkedin.com/in/sebastian-chuquimia-vergara-834aab151/",
+    linkedin: "https://www.linkedin.com/in/sebastianchuquimia",
     email: "mailto:seba.j.os@hotmail.com",
   },
   resumeUrl: "/SebastianChuquimia-CV-DesarrolladorSoftware.pdf",
